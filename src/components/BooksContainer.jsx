@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux";
 import AddBookForm from "./AddBookForm";
 import Book from "./Book";
 
 const BooksContainer = () => {
+  const booksState = useSelector((state) => state);
   return (
     <main className='py-12 2xl:px-6'>
       <div className='container grid xl:grid-cols-[auto_350px] 2xl:grid-cols-[auto_400px] gap-4 2xl:gap-8'>
@@ -20,8 +22,9 @@ const BooksContainer = () => {
           </div>
           <div className='lws-bookContainer'>
             {/* single book component */}
-            <Book />
-            <Book />
+            {booksState.map((book) => (
+              <Book book={book} key={book.id} />
+            ))}
           </div>
         </div>
         <div>

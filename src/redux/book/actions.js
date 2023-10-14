@@ -1,15 +1,15 @@
 import { BOOK_ADD, BOOK_DELETE } from "./actionTypes";
 
-export const addBook = (product) => {
+export const addBook = (book) => {
   return {
     type: BOOK_ADD,
-    payload: product,
+    payload: book,
   };
 };
 
-export const deleteBook = (productId) => {
+export const deleteBook = (bookId) => {
   return {
     type: BOOK_DELETE,
-    payload: productId,
+    payload: bookId,
   };
 };

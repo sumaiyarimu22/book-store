@@ -1,16 +1,28 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addBook } from "../redux/book/actions";
 
 const AddBookForm = () => {
   const [bookData, setBookData] = useState({});
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setBookData({ ...bookData, [e.target.name]: e.target.value });
+    setBookData({
+      ...bookData,
+      [e.target.name]:
+        e.target.type === "checkbox" ? e.target.checked : e.target.value,
+    });
+  };
+
+  const hnadleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addBook(bookData));
   };
 
   return (
     <div className='p-4 overflow-hidden bg-white shadow-cardShadow rounded-md'>
       <h4 className='mb-8 text-xl font-bold text-center'>Add New Book</h4>
-      <form className='book-form'>
+      <form className='book-form' onSubmit={hnadleSubmit}>
         <div className='space-y-2'>
           <label htmlFor='name'>Book Name</label>
           <input
@@ -84,8 +96,7 @@ const AddBookForm = () => {
             onChange={handleChange}
           />
           <label htmlFor='featured' className='ml-2 text-sm'>
-            {" "}
-            This is a featured book{" "}
+            This is a featured book
           </label>
         </div>
 
