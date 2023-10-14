@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const AddBookForm = () => {
+  const [bookData, setBookData] = useState({});
+
+  const handleChange = (e) => {
+    setBookData({ ...bookData, [e.target.name]: e.target.value });
+  };
+
   return (
     <div className='p-4 overflow-hidden bg-white shadow-cardShadow rounded-md'>
       <h4 className='mb-8 text-xl font-bold text-center'>Add New Book</h4>
@@ -11,6 +19,7 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookname'
             name='name'
+            onChange={handleChange}
           />
         </div>
 
@@ -22,6 +31,7 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookauthor'
             name='author'
+            onChange={handleChange}
           />
         </div>
 
@@ -33,6 +43,7 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookthumbnail'
             name='thumbnail'
+            onChange={handleChange}
           />
         </div>
 
@@ -45,6 +56,7 @@ const AddBookForm = () => {
               type='number'
               id='input-Bookprice'
               name='price'
+              onChange={handleChange}
             />
           </div>
 
@@ -58,6 +70,7 @@ const AddBookForm = () => {
               name='rating'
               min='1'
               max='5'
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -68,6 +81,7 @@ const AddBookForm = () => {
             type='checkbox'
             name='featured'
             className='w-4 h-4'
+            onChange={handleChange}
           />
           <label htmlFor='featured' className='ml-2 text-sm'>
             {" "}

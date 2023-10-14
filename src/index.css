@@ -757,7 +757,7 @@ input[type="number"]:focus {
   display: block;
   width: 100%;
   border-radius: 0.375rem;
-  background-color: rgb(88 80 236 / 0.9);
+  background-color: rgba(114, 80, 236, 0.9);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;

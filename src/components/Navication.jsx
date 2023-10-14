@@ -4,12 +4,12 @@ const logo =
 const Navication = () => {
   return (
     <nav className='py-4 2xl:px-6'>
-      <div className='container flex items-center justify-between w-10 h-20 overflow-hidden'>
+      <div className='container flex items-center justify-between '>
         <img
           src={logo}
           width='100px'
           height='300px'
-          className='object-contain'
+          className='object-contain w-20 rounded'
         />
 
         <ul className='hidden md:flex items-center space-x-6'>

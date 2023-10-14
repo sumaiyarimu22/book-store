@@ -1,12 +1,14 @@
-import BookesContainer from "./components/BookesContainer";
+import { Provider } from "react-redux";
+import BooksContainer from "./components/BooksContainer";
 import Navication from "./components/Navication";
+import store from "./redux/store";
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Navication />
-      <BookesContainer />
-    </div>
+      <BooksContainer />
+    </Provider>
   );
 };
 
