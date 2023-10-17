@@ -3,8 +3,8 @@ import { deleteBook } from "../redux/book/actions";
 
 /* eslint-disable react/prop-types */
 const Book = ({ book }) => {
-  const dispatch = useDispatch();
   const { name, author, thumbnail, price, rating, featured, id } = book;
+  const dispatch = useDispatch();
 
   const generateRating = (rating) => {
     let stars = [];
