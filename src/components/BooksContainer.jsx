@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import fetchBookList from "../redux/thunk/fetchBookList";
 
 const BooksContainer = () => {
-  const booksState = useSelector((state) => state);
+  const bookState = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBookList);
@@ -29,7 +29,7 @@ const BooksContainer = () => {
           </div>
           <div className='lws-bookContainer'>
             {/* single book component */}
-            {booksState.map((book) => (
+            {bookState.map((book) => (
               <Book book={book} key={book.id} />
             ))}
           </div>

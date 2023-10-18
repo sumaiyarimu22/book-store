@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addBook } from "../redux/book/actions";
+import bookAddToServer from "../redux/thunk/addBook";
 
 const AddBookForm = () => {
   const [bookData, setBookData] = useState({});
@@ -16,7 +16,7 @@ const AddBookForm = () => {
 
   const hnadleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook(bookData));
+    dispatch(bookAddToServer(bookData));
   };
 
   return (

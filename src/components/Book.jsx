@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteBook } from "../redux/book/actions";
+import bookDeleteToServer from "../redux/thunk/deleteBook";
 
 /* eslint-disable react/prop-types */
 const Book = ({ book }) => {
@@ -59,7 +60,7 @@ const Book = ({ book }) => {
             </button>
             <button
               className='lws-delete'
-              onClick={() => dispatch(deleteBook(id))}
+              onClick={() => dispatch(bookDeleteToServer(id))}
             >
               <svg
                 fill='none'
