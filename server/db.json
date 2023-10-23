@@ -1,30 +1,48 @@
 {
   "books": [
     {
-      "name": "Slow Horses (Deluxe Edition)",
-      "author": "Mick Herron",
-      "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
-      "price": 14,
-      "rating": 3,
-      "featured": false,
-      "id": 1
+      "name": "The Spooky Wheels on the Bus",
+      "author": "J. Elizabeth Mills ",
+      "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/91QIjV4x67L._AC_UL210_SR195,210_.jpg",
+      "price": "500",
+      "rating": "4",
+      "featured": true,
+      "id": 5
     },
     {
-      "name": "Eloquent JavaScript, 3rd Edition",
-      "author": "Marijn Haverbeke",
-      "thumbnail": "https://m.media-amazon.com/images/I/51InjRPaF7L._SX377_BO1,204,203,200_.jpg",
-      "price": 23.99,
-      "rating": 4,
+      "name": "Corduroy's Best Halloween Ever",
+      "author": "J. Elizabeth Mills ",
+      "thumbnail": "https://m.media-amazon.com/images/I/61pz1LZ8dWL._SX342_SY445_.jpg",
+      "price": "5677",
+      "rating": "3",
       "featured": true,
-      "id": 4
+      "id": 6
+    },
+    {
+      "name": "White Bird",
+      "author": "R. J. Palacio",
+      "thumbnail": "https://m.media-amazon.com/images/I/51i6KX4JNIL._SY445_SX342_.jpg",
+      "price": "5677",
+      "rating": "3",
+      "featured": true,
+      "id": 7
+    },
+    {
+      "name": "Posted",
+      "author": "John David Anderson",
+      "thumbnail": "https://m.media-amazon.com/images/I/51G4se53OPL._SY445_SX342_.jpg",
+      "price": "3377",
+      "rating": "4",
+      "featured": false,
+      "id": 8
     },
     {
       "name": "atika",
-      "author": "dfgdg",
-      "thumbnail": "https://images.pexels.com/photos/2465877/pexels-photo-2465877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "price": "666",
-      "rating": "3",
-      "id": 5
+      "author": "J. Elizabeth Mills ",
+      "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/91QIjV4x67L._AC_UL210_SR195,210_.jpg",
+      "price": "3455",
+      "rating": "5",
+      "id": 9
     }
   ]
 }
