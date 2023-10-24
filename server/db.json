@@ -1,12 +1,12 @@
 {
   "books": [
     {
-      "name": "The Spooky Wheels on the Bus",
-      "author": "J. Elizabeth Mills ",
+      "name": "The Spooky Wheels on the ",
+      "author": "J. Elizabeth  ",
       "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/91QIjV4x67L._AC_UL210_SR195,210_.jpg",
-      "price": "500",
-      "rating": "4",
-      "featured": true,
+      "price": "5058",
+      "rating": "2",
+      "featured": false,
       "id": 5
     },
     {

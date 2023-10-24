@@ -1,10 +1,19 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import bookAddToServer from "../redux/thunk/addBook";
+import { updatedtoServer } from "../redux/thunk/updateBook";
 
 const AddBookForm = () => {
   const [bookData, setBookData] = useState({});
+  const [editedData, setEditedData] = useState({});
+  const editBook = useSelector((state) => state.editBook);
+  const update = useSelector((state) => state.update);
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setEditedData(editBook);
+  }, [editBook]);
 
   const handleChange = (e) => {
     setBookData({
@@ -13,15 +22,28 @@ const AddBookForm = () => {
         e.target.type === "checkbox" ? e.target.checked : e.target.value,
     });
   };
+  const handleEditChange = (e) => {
+    setEditedData({
+      ...editedData,
+      [e.target.name]:
+        e.target.type === "checkbox" ? e.target.checked : e.target.value,
+    });
+  };
 
   const hnadleSubmit = (e) => {
     e.preventDefault();
-    dispatch(bookAddToServer(bookData));
+    if (update) {
+      dispatch(updatedtoServer(editedData));
+    } else {
+      dispatch(bookAddToServer(bookData));
+    }
   };
 
   return (
     <div className='p-4 overflow-hidden bg-white shadow-cardShadow rounded-md'>
-      <h4 className='mb-8 text-xl font-bold text-center'>Add New Book</h4>
+      <h4 className='mb-8 text-xl font-bold text-center'>
+        {update ? "edit book" : "Add New Book"}
+      </h4>
       <form className='book-form' onSubmit={hnadleSubmit}>
         <div className='space-y-2'>
           <label htmlFor='name'>Book Name</label>
@@ -31,7 +53,8 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookname'
             name='name'
-            onChange={handleChange}
+            onChange={update ? handleEditChange : handleChange}
+            value={editedData.name}
           />
         </div>
 
@@ -43,7 +66,8 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookauthor'
             name='author'
-            onChange={handleChange}
+            onChange={update ? handleEditChange : handleChange}
+            value={editedData.author}
           />
         </div>
 
@@ -55,7 +79,8 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookthumbnail'
             name='thumbnail'
-            onChange={handleChange}
+            onChange={update ? handleEditChange : handleChange}
+            value={editedData.thumbnail}
           />
         </div>
 
@@ -68,7 +93,8 @@ const AddBookForm = () => {
               type='number'
               id='input-Bookprice'
               name='price'
-              onChange={handleChange}
+              onChange={update ? handleEditChange : handleChange}
+              value={editedData.price}
             />
           </div>
 
@@ -82,7 +108,8 @@ const AddBookForm = () => {
               name='rating'
               min='1'
               max='5'
-              onChange={handleChange}
+              onChange={update ? handleEditChange : handleChange}
+              value={editedData.rating}
             />
           </div>
         </div>
@@ -93,7 +120,8 @@ const AddBookForm = () => {
             type='checkbox'
             name='featured'
             className='w-4 h-4'
-            onChange={handleChange}
+            onChange={update ? handleEditChange : handleChange}
+            checked={editedData.featured}
           />
           <label htmlFor='featured' className='ml-2 text-sm'>
             This is a featured book
@@ -101,7 +129,7 @@ const AddBookForm = () => {
         </div>
 
         <button type='submit' className='submit' id='submit'>
-          Add Book
+          {update ? "update" : " Add Book"}
         </button>
       </form>
     </div>

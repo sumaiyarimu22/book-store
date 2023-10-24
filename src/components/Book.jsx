@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import bookDeleteToServer from "../redux/thunk/deleteBook";
+import { editBook } from "../redux/book/actions";
 
 /* eslint-disable react/prop-types */
 const Book = ({ book }) => {
@@ -42,7 +43,10 @@ const Book = ({ book }) => {
             <span></span>
           )}
           <div className='text-gray-500 space-x-2'>
-            <button className='lws-edit'>
+            <button
+              className='lws-edit'
+              onClick={() => dispatch(editBook(book))}
+            >
               <svg
                 fill='none'
                 viewBox='0 0 24 24'

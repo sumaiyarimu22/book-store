@@ -1,8 +1,15 @@
-import { BOOK_ADD, BOOK_DELETE, EDIT_BOOK, LOADED } from "./actionTypes";
+import {
+  BOOK_ADD,
+  BOOK_DELETE,
+  EDIT_BOOK,
+  LOADED,
+  STATUS_BOOK,
+} from "./actionTypes";
 const initialState = {
   bookList: [],
   editBook: {},
   update: false,
+  status: "All",
 };
 
 // const newId = (book) => {
@@ -16,6 +23,7 @@ const bookReducer = (state = initialState, action) => {
       return {
         ...state,
         bookList: [...action.payload],
+        update: false,
       };
 
     case BOOK_ADD:
@@ -26,6 +34,12 @@ const bookReducer = (state = initialState, action) => {
         ...state,
         editBook: { ...action.payload },
         update: true,
+      };
+
+    case STATUS_BOOK:
+      return {
+        ...state,
+        status: action.payload,
       };
 
     case BOOK_DELETE:
