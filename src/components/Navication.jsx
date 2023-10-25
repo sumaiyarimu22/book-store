@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import serachThunk from "../redux/thunk/searchThunk";
 
-const logo =
-  "https://images.pexels.com/photos/1005012/pexels-photo-1005012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+const logo = "https://cdn-icons-png.flaticon.com/512/6595/6595705.png";
 
 const Navication = () => {
   const dispatch = useDispatch();
@@ -23,14 +22,14 @@ const Navication = () => {
         <img
           src={logo}
           width='100px'
-          height='300px'
-          className='object-contain w-20 rounded'
+          height='200px'
+          className='object-contain h-14'
         />
 
         <ul className='hidden md:flex items-center space-x-6'>
-          <li className='font-semibold cursor-pointer'>Book Store</li>
-          <li className='cursor-pointer'>Wishlist</li>
-          <li className='cursor-pointer'>My Collection</li>
+          <li className='font-semibold cursor-pointer text-3xl'>Book Store</li>
+          {/* <li className='cursor-pointer'>Wishlist</li> */}
+          {/* <li className='cursor-pointer'>My Collection</li> */}
         </ul>
 
         <form className='flex items-center' onSubmit={handleSubmit}>

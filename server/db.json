@@ -10,15 +10,6 @@
       "id": 5
     },
     {
-      "name": "White Bird",
-      "author": "R. J. Palacio",
-      "thumbnail": "https://m.media-amazon.com/images/I/51i6KX4JNIL._SY445_SX342_.jpg",
-      "price": "5677",
-      "rating": "3",
-      "featured": true,
-      "id": 7
-    },
-    {
       "name": "Posted",
       "author": "John David Anderson",
       "thumbnail": "https://m.media-amazon.com/images/I/51G4se53OPL._SY445_SX342_.jpg",
@@ -26,23 +17,6 @@
       "rating": "4",
       "featured": false,
       "id": 8
-    },
-    {
-      "name": "atika",
-      "author": "J. Elizabeth Mills ",
-      "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/91QIjV4x67L._AC_UL210_SR195,210_.jpg",
-      "price": "3455",
-      "rating": "5",
-      "id": 9
-    },
-    {
-      "name": "atika",
-      "author": "J. Elizabeth Mills ",
-      "thumbnail": "https://m.media-amazon.com/images/I/51i6KX4JNIL._SY445_SX342_.jpg",
-      "price": "657",
-      "rating": "3",
-      "featured": true,
-      "id": 11
     },
     {
       "name": "Dermatology Defined",
