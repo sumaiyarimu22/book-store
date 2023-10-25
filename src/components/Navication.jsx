@@ -1,7 +1,22 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import serachThunk from "../redux/thunk/searchThunk";
+
 const logo =
   "https://images.pexels.com/photos/1005012/pexels-photo-1005012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
 const Navication = () => {
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    dispatch(serachThunk(search));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <nav className='py-4 2xl:px-6'>
       <div className='container flex items-center justify-between '>
@@ -18,7 +33,7 @@ const Navication = () => {
           <li className='cursor-pointer'>My Collection</li>
         </ul>
 
-        <form className='flex items-center'>
+        <form className='flex items-center' onSubmit={handleSubmit}>
           <div className='group relative rounded-md bg-white'>
             <svg
               width='20'
@@ -37,6 +52,8 @@ const Navication = () => {
               placeholder='Filter books...'
               className='search'
               id='lws-searchBook'
+              value={search}
+              onChange={handleChange}
             />
           </div>
         </form>

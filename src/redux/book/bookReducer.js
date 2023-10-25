@@ -3,6 +3,7 @@ import {
   BOOK_DELETE,
   EDIT_BOOK,
   LOADED,
+  SEARCH,
   STATUS_BOOK,
 } from "./actionTypes";
 const initialState = {
@@ -12,11 +13,6 @@ const initialState = {
   status: "All",
 };
 
-// const newId = (book) => {
-//   const maxId = book.reduce((maxId, book) => Math.max(book.id, maxId), -1);
-//   return maxId + 1;
-// };
-
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOADED:
@@ -24,6 +20,7 @@ const bookReducer = (state = initialState, action) => {
         ...state,
         bookList: [...action.payload],
         update: false,
+        editBook: {},
       };
 
     case BOOK_ADD:
@@ -40,6 +37,12 @@ const bookReducer = (state = initialState, action) => {
       return {
         ...state,
         status: action.payload,
+      };
+
+    case SEARCH:
+      return {
+        ...state,
+        bookList: [...action.payload],
       };
 
     case BOOK_DELETE:

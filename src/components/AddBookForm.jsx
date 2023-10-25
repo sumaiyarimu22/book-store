@@ -13,7 +13,7 @@ const AddBookForm = () => {
 
   useEffect(() => {
     setEditedData(editBook);
-  }, [editBook]);
+  }, [editBook, update]);
 
   const handleChange = (e) => {
     setBookData({
@@ -36,6 +36,14 @@ const AddBookForm = () => {
       dispatch(updatedtoServer(editedData));
     } else {
       dispatch(bookAddToServer(bookData));
+      setBookData({
+        name: "",
+        author: "",
+        thumbnail: "",
+        price: "",
+        rating: "",
+        featured: false,
+      });
     }
   };
 
@@ -53,8 +61,8 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookname'
             name='name'
+            value={update ? editedData.name : bookData.name}
             onChange={update ? handleEditChange : handleChange}
-            value={editedData.name}
           />
         </div>
 
@@ -66,8 +74,8 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookauthor'
             name='author'
+            value={update ? editedData.author : bookData.author}
             onChange={update ? handleEditChange : handleChange}
-            value={editedData.author}
           />
         </div>
 
@@ -79,8 +87,8 @@ const AddBookForm = () => {
             type='text'
             id='input-Bookthumbnail'
             name='thumbnail'
+            value={update ? editedData.thumbnail : bookData.thumbnail}
             onChange={update ? handleEditChange : handleChange}
-            value={editedData.thumbnail}
           />
         </div>
 
@@ -93,8 +101,8 @@ const AddBookForm = () => {
               type='number'
               id='input-Bookprice'
               name='price'
+              value={update ? editedData.price : bookData.price}
               onChange={update ? handleEditChange : handleChange}
-              value={editedData.price}
             />
           </div>
 
@@ -108,8 +116,8 @@ const AddBookForm = () => {
               name='rating'
               min='1'
               max='5'
+              value={update ? editedData.rating : bookData.rating}
               onChange={update ? handleEditChange : handleChange}
-              value={editedData.rating}
             />
           </div>
         </div>
@@ -120,8 +128,8 @@ const AddBookForm = () => {
             type='checkbox'
             name='featured'
             className='w-4 h-4'
+            checked={update ? editedData.featured : bookData.featured}
             onChange={update ? handleEditChange : handleChange}
-            checked={editedData.featured}
           />
           <label htmlFor='featured' className='ml-2 text-sm'>
             This is a featured book

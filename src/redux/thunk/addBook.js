@@ -12,7 +12,7 @@ const bookAddToServer = (book) => {
         rating: book.rating,
         featured: book.featured,
       }),
-      headers: { "Content-type": "application/json; chartset=UTF-8" },
+      headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     const books = await response.json();
     dispatch(addBook(books));

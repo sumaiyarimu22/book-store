@@ -1,22 +1,13 @@
 {
   "books": [
     {
-      "name": "The Spooky Wheels on the ",
+      "name": "The Spooky Wheels on ",
       "author": "J. Elizabeth  ",
       "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/91QIjV4x67L._AC_UL210_SR195,210_.jpg",
       "price": "5058",
-      "rating": "2",
+      "rating": "4",
       "featured": false,
       "id": 5
-    },
-    {
-      "name": "Corduroy's Best Halloween Ever",
-      "author": "J. Elizabeth Mills ",
-      "thumbnail": "https://m.media-amazon.com/images/I/61pz1LZ8dWL._SX342_SY445_.jpg",
-      "price": "5677",
-      "rating": "3",
-      "featured": true,
-      "id": 6
     },
     {
       "name": "White Bird",
@@ -43,6 +34,33 @@
       "price": "3455",
       "rating": "5",
       "id": 9
+    },
+    {
+      "name": "atika",
+      "author": "J. Elizabeth Mills ",
+      "thumbnail": "https://m.media-amazon.com/images/I/51i6KX4JNIL._SY445_SX342_.jpg",
+      "price": "657",
+      "rating": "3",
+      "featured": true,
+      "id": 11
+    },
+    {
+      "name": "Dermatology Defined",
+      "author": " Sandipan Dhar",
+      "thumbnail": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/9e300028f_191009.jpg",
+      "price": "1710",
+      "rating": "4",
+      "featured": true,
+      "id": 12
+    },
+    {
+      "name": "যতীন সেন সংখ্যা",
+      "author": " বিশ্বদেব গঙ্গোপাধ্যায়",
+      "thumbnail": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Bishoy_Cartoon-Biswadeb_Gangopadhyaya-f4b92-265843.jpg",
+      "price": "630",
+      "rating": "4",
+      "featured": false,
+      "id": 13
     }
   ]
 }

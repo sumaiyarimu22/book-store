@@ -3,6 +3,7 @@ import {
   BOOK_DELETE,
   EDIT_BOOK,
   LOADED,
+  SEARCH,
   STATUS_BOOK,
 } from "./actionTypes";
 
@@ -31,6 +32,13 @@ export const changeStatus = (statusType) => {
   return {
     type: STATUS_BOOK,
     payload: statusType,
+  };
+};
+
+export const search = (value) => {
+  return {
+    type: SEARCH,
+    payload: value,
   };
 };
 

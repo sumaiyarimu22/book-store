@@ -5,7 +5,7 @@ export const updatedtoServer = (bookinfo) => {
     await fetch(`http://localhost:9000/books/${bookinfo.id}`, {
       method: "PATCH",
       body: JSON.stringify({ ...bookinfo }),
-      headers: { "Content-type": "application/json; chartset=UTF-8" },
+      headers: { "Content-type": "application/json; charset=UTF-8" },
     });
 
     const allData = await fetch(`http://localhost:9000/books`);
